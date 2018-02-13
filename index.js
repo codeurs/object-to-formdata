@@ -26,8 +26,8 @@ function objectToFormData (obj, fd, pre) {
   if (isUndefined(obj)) {
     return fd
   } else if (isArray(obj)) {
-    obj.forEach(function (value) {
-      var key = pre + '[]'
+    obj.forEach(function (value, index) {
+      var key = pre + '['+index+']'
 
       objectToFormData(value, fd, key)
     })
