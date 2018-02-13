@@ -46,7 +46,7 @@ function objectToFormData (obj, fd, pre) {
       objectToFormData(value, fd, key)
     })
   } else {
-    fd.append(pre, obj)
+    if (obj !== null) fd.append(pre, obj)
   }
 
   return fd
